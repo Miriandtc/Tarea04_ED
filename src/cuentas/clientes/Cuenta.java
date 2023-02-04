@@ -2,7 +2,7 @@ package cuentas.clientes;
 
 public class Cuenta {
 
-
+    
     private String nombre;
     private String cuenta;
     private double saldo;
@@ -56,11 +56,6 @@ public class Cuenta {
     public void setTipoInteres(double tipoInteres) {
         this.tipoInteres = tipoInteres;
     }
-    
-    public double estado()
-    {
-        return saldo;
-    }
 
     public void ingresar(double cantidad) throws Exception
     {
@@ -73,7 +68,7 @@ public class Cuenta {
     {
         if (cantidad <= 0)
             throw new Exception ("No se puede retirar una cantidad negativa");
-        if (estado()< cantidad)
+        if (getSaldo()< cantidad)
             throw new Exception ("No se hay suficiente saldo");
         saldo = saldo - cantidad;
     }
